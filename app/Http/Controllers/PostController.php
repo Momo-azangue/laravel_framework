@@ -2,25 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function Index(){
-        $posts = [
-            'Mon premier super titre',
-            'Mon second super titre'
-        ];
-
+        $posts =  Post::all();
+    
+        
         return view('articles', compact('posts'));
     }
 
     public function show($id){
-        $posts =[
-            1 => 'Mon titre n°1',
-            2 => 'Mon titre n°2'
-        ];  
-        $post = $posts[$id];
+
+        // $post =  Post::findOrfail($id);
+
+
+        $post = Post::where('title', 'Dolore quibusdam voluptas est qui rerum repudiandae quidem.')->first();
+
+ 
 
         return view('article',[
             'post' => $post
