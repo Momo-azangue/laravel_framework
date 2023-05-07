@@ -8,7 +8,28 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function Index(){
-        $posts =  Post::all();
+
+        $post = Post::find(12);
+
+        $post->delete(); 
+
+        dd('vous avez supprimé');
+        
+        //$post = Post::find(1);
+        // $post->update([
+        //     'title' => 'Titre édité'
+        // ]);
+
+       
+
+   
+
+
+
+
+
+
+        $posts =  Post::orderBy('title')->get();
     
         
         return view('articles', compact('posts'));
