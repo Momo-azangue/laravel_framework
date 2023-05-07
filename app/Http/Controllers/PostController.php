@@ -16,10 +16,10 @@ class PostController extends Controller
 
     public function show($id){
 
-        // $post =  Post::findOrfail($id);
+        $post =  Post::findOrfail($id);
 
 
-        $post = Post::where('title', 'Dolore quibusdam voluptas est qui rerum repudiandae quidem.')->first();
+        // $post = Post::where('title', 'Dolore quibusdam voluptas est qui rerum repudiandae quidem.')->firstOrfail();
 
  
 
@@ -32,4 +32,11 @@ class PostController extends Controller
         
         return view('contact');
     }
+
+    public function create(){
+
+        return view('form');
+    }
+
+
 }
