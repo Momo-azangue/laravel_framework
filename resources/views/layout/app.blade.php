@@ -11,7 +11,11 @@
 <body>
     @include('partials.navbar')
 	<div class="container mx-auto"> 
+	<br>
+		<br>
+		<br>
 		@yield('content') 
+		
 	</div>
 	
 

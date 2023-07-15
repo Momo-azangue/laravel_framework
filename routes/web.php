@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\User1Controller;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,15 @@ Route::get('/posts/create', [PostController::class, 'create'])->name('posts.crea
 Route::post('/posts/create', [PostController::class, 'store'])->name('posts.store');
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
 Route::get('/contact', [PostController::class, 'contact'])->name('contact');
+
+Route::get('/user1s', [User1Controller::class, 'index'])->name('user1s.index');
+Route::get('/user1s/create', [User1Controller::class, 'create'])->name('user1s.create');
+Route::post('/user1s', [User1Controller::class, 'store'])->name('user1s.store');
+Route::get('/user1s/{user}', [User1Controller::class, 'show'])->name('user1s.show');
+Route::get('/user1s/{user}/edit', [User1Controller::class, 'edit'])->name('user1s.edit');
+Route::put('/user1s/{user}', [User1Controller::class, 'update'])->name('user1s.update');
+Route::delete('/user1s/{user}', [User1Controller::class, 'delete'])->name('user1s.destroy');
+
 
 
 // Route::get('/posts', function () {

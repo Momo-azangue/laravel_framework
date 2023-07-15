@@ -9,25 +9,13 @@ class PostController extends Controller
 {
     public function Index(){
 
-        $post = Post::find(12);
+        $post = Post::all();
 
-        $post->delete(); 
-
-        dd('vous avez supprimé');
-        
+        // $post->delete(); 
         //$post = Post::find(1);
         // $post->update([
         //     'title' => 'Titre édité'
         // ]);
-
-       
-
-   
-
-
-
-
-
 
         $posts =  Post::orderBy('title')->get();
     
